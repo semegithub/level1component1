@@ -18,7 +18,7 @@ public class GatewayResource {
     @Produces(MediaType.TEXT_PLAIN)
     @Path("/hello")
     public String hello() {
-        return "Hello!";
+        return "hello";
     }
     
     @GET
