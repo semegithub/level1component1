@@ -14,7 +14,7 @@ public class SimpleReadinessCheck implements HealthCheck {
 	@Override
 	public HealthCheckResponse call() {
 		String hostname = System.getenv().getOrDefault("HOSTNAME", "unknown");
-		String message = "Gateway ready on host " + hostname + "\n";
+		String message = "Level1Component1 ready on host " + hostname + "\n";
 
 		HealthCheckResponse response = null;
 //		if (i < 10) {

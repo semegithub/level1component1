@@ -13,7 +13,7 @@ public class SimpleLivenessCheck implements HealthCheck {
 	@Override
 	public HealthCheckResponse call() {
 		String hostname = System.getenv().getOrDefault("HOSTNAME", "unknown");
-		String message = "Gateway live on host " + hostname + "\n";
+		String message = "Level1Component1 live on host " + hostname + "\n";
 		
 		System.out.println(message);
 

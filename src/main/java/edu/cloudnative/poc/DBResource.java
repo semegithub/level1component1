@@ -1,18 +1,20 @@
 package edu.cloudnative.poc;
 
-import javax.inject.Inject;
+import java.util.List;
+
+import javax.transaction.Transactional;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-
-import org.jboss.resteasy.annotations.jaxrs.PathParam;
+import javax.ws.rs.core.Response;
 
 @Path("/")
-public class GatewayResource {
-
-	@Inject
-    GatewayService service;
+@Produces("application/json")
+@Consumes("application/json")
+public class DBResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
@@ -21,10 +23,18 @@ public class GatewayResource {
         return "hello";
     }
     
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    @Path("/cpustress/{cpucounter}")
-    public String cpustress(@PathParam Integer cpucounter) {
-        return service.cpustress(cpucounter);
+    @POST
+    @Transactional
+    @Path("/save")
+    public Response create(MyEntity myEntity) {
+    	myEntity.persist();
+        return Response.ok(myEntity).status(201).build();
     }
+    
+    @GET
+    @Path("/findAll")
+    public List<MyEntity> findAll() {
+        return MyEntity.listAll();
+    }
+
 }
