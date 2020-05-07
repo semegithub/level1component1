@@ -34,7 +34,7 @@ public class PostgreSQLResource {
     }
     
     @GET
-    @Path("/entites")
+    @Path("/entities")
     public List<MyEntity> findAll() {
         return MyEntity.listAll();
     }
