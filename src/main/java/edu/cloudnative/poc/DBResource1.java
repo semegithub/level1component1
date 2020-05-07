@@ -14,7 +14,7 @@ import javax.ws.rs.core.Response;
 @Path("/")
 @Produces("application/json")
 @Consumes("application/json")
-public class DBResource {
+public class DBResource1 {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
