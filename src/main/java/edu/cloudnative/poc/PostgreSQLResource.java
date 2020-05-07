@@ -11,6 +11,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.jboss.resteasy.annotations.jaxrs.PathParam;
+
 @Path("/")
 @Produces("application/json")
 @Consumes("application/json")
@@ -32,9 +34,15 @@ public class PostgreSQLResource {
     }
     
     @GET
-    @Path("/findAll")
+    @Path("/entites")
     public List<MyEntity> findAll() {
         return MyEntity.listAll();
+    }
+    
+    @GET
+    @Path("/entities/{id}")
+    public List<MyEntity> findById(@PathParam int id) {
+        return MyEntity.findById(id);
     }
 
 }
