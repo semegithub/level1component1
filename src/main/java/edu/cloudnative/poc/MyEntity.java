@@ -63,16 +63,16 @@ public class MyEntity extends PanacheEntity {
 	private String f39;
 	private String f40;
 	
-    public Response create(MyEntity myEntity) {
-    	myEntity.persist();
-        return Response.ok(myEntity).status(201).build();
-    }
-    
-    public List<MyEntity> getAll() {
-        return listAll();
-    }
-    
-    public List<MyEntity> findById(@PathParam int id) {
-        return findById(id);
-    }
+//    public Response create(MyEntity myEntity) {
+//    	myEntity.persist();
+//        return Response.ok(myEntity).status(201).build();
+//    }
+//    
+//    public List<MyEntity> getAll() {
+//        return listAll();
+//    }
+//    
+//    public List<MyEntity> findById(@PathParam int id) {
+//        return findById(id);
+//    }
 }
