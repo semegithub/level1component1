@@ -36,13 +36,13 @@ public class PostgreSQLResource {
     @GET
     @Path("/entities")
     public List<MyEntity> findAll() {
-        return MyEntity.listAll();
+        return new MyEntity().listAll();
     }
     
     @GET
     @Path("/entities/{id}")
     public List<MyEntity> findById(@PathParam int id) {
-        return MyEntity.findById(id);
+        return new MyEntity().findById(id);
     }
 
 }

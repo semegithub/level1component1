@@ -1,9 +1,18 @@
 package edu.cloudnative.poc;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.transaction.Transactional;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.core.Response;
+
+import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
@@ -54,4 +63,16 @@ public class MyEntity extends PanacheEntity {
 	private String f39;
 	private String f40;
 	
+    public Response create(MyEntity myEntity) {
+    	myEntity.persist();
+        return Response.ok(myEntity).status(201).build();
+    }
+    
+    public List<MyEntity> getAll() {
+        return listAll();
+    }
+    
+    public List<MyEntity> findById(@PathParam int id) {
+        return findById(id);
+    }
 }
