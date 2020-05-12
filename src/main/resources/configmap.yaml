@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  postgresql.url: jdbc:postgresql://c0b72ff7-7f55-4656-9a2f-0c6f8fac8c52.bpb68u2f0gvaqgd0n64g.databases.appdomain.cloud:31157/ibmclouddb
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2020-05-07T16:04:57Z"
+  name: postgresql-connect
+  namespace: seme-lab-l1c1-quarkus-native
+  resourceVersion: "13914838"
+  selfLink: /api/v1/namespaces/seme-lab-l1c1-quarkus-native/configmaps/postgresql-connect
+  uid: 4d9d2b62-e625-4732-bb86-1b1e3aa05438
